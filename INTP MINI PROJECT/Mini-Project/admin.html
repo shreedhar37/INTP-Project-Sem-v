@@ -1,0 +1,73 @@
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Log-In</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="login.js"></script>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: green;
+    }
+
+    li a:hover {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <!-- Creating nav bar -->
+    <ul>
+      <li><a class="login" href="/Mini-Project/landing_page/Home.html">Home</a></li>
+      <li><a class="contact" href="contact.html" style="margin-left: 1000px;">Contact</a></li>
+      <li><a class="aboutus" href="about.html">About Us</a></li>
+
+    </ul>
+
+    <b>
+      <p id="heading" style="color:#039e03;margin-top:10px;">Let's C!pher</p>
+    </b>
+
+    <div class="icon-lock" style="clear: left; float: left">
+      <div class="lock-top-1" style="background-color: #17ac2e"></div>
+      <div class="lock-top-2"></div>
+      <div class="lock-body" style="background-color: #17ac2e"></div>
+      <div class="lock-hole"></div>
+    </div>
+
+    <div class="form_box">
+      <div class="button_box">
+        <div id="btn"></div>
+        <button type="button" class="toogle_btn" onclick="login()">Admin Log-In</button>
+      </div>
+      <form id="login" name="signin" action="admin.php" class="input_group" method="POST"
+        onsubmit="return validateForm()">
+        <input type="text" class="input_field" placeholder="USER ID" name="uid" required>
+        <input type="password" class="input_field" placeholder="ENTER PASSWORD" name="paswd" required><br><br>
+        <button type="submit" class="submit_btn" name="submit1">LOGIN</button><br><br>
+    </div>
+  </div>
+
+</body>
+
+</html>

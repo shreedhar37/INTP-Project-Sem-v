@@ -1,0 +1,193 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <style>
+    .Navbar {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+      position: fixed;
+      overflow: hidden;
+    }
+
+    li.active {
+      float: left;
+    }
+
+    li.active a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: green;
+    }
+
+    li.active a:hover {
+      background-color: #111;
+    }
+
+
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <div class="main">
+    <!-- Creating nav bar -->
+    <ul class="Navbar">
+      <li class="active"><a class="home" href="/index.html">Home</a></li>
+      <li class="active"><a class="home" href="index.html">Log-In / Register</a></li>
+      <li class="active"><a class="contact" href="contact.html">Contact</a></li>
+      <li class="active"><a class="aboutus" href="about.html">About Us</a></li>
+
+    </ul>
+    <br><br><br>
+    <b>
+      <div class="responsive">
+        <h1 id="heading" style="color:#039e03;margin-top:10px;">Let's C!pher</h1>
+    </b>
+    <div class="lock">
+      <img src="lock.jpg" alt="lock-icon">
+    </div>
+    <br>
+
+    <div>
+      <h1 style="color:#039e03;"><u>The Encoders</u></h1><br><br>
+      <ul class="names" style="color:#039e03;">
+        <h3>
+          <li>Shreedhar Chavan</li>
+        </h3>
+        <h3>
+          <li>Abhishek Dalvi</li>
+        </h3>
+        <h3>
+          <li>Girish Dange</li>
+        </h3>
+        <h3>
+          <li>Manas Ghodinde</li>
+        </h3>
+      </ul>
+    </div>
+    <br><br>
+    <h3 style="color:#039e03;">A group of aspiring IT Engineers</h3><br>
+    <h3 style="color:#039e03;">Students of Pillai College Of Engineering, New Panvel</h3><br><br>
+    <a target="_blank" href="mailto:chavanshrsa18it@student.mes.ac.in" class="fa fa-envelope-square"
+      style="font-size:36px; margin-top:24px;color:white"></a>
+    <a target="_blank" href="https://github.com/Let-s-C-pher" class="fa fa-github"
+      style="font-size:36px; margin-left:150px;  margin-top:24px; color:white;"></a>
+  </div>
+  <br><br><br>
+
+  <div class="vidio">
+
+    <button onclick="playVid()" type="button">Play Video</button>
+    <button style="margin-left:110px;" onclick="pauseVid()" type="button">Pause Video</button>
+    <button onclick="openFullscreen();" style="margin-left:80px;" type="button">Fullscreen Mode</button><br><br>
+
+    <video width="600" height="400" id="myVideo" controls disablePictureInPicture controlsList="nodownload">
+      <source id="myVideo" src="video1.mp4" type="video/mp4">
+      <source id="myVideo" src="video1.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video><br><br>
+    <p style="margin-left: 160px;">Video Credits: <a target="_blank"
+        href="https://www.youtube.com/watch?v=FmWH1gMvOD8">Youtube:eduTV Online</a></p>
+  </div><br>
+  <div id="map"> </div>
+  </div>
+
+
+
+
+
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin="">
+  </script>
+  <script>
+    var mymap = L.map('map').setView([18.990072, 73.128871], 16);
+
+    var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+    // Adding layer to the map
+    mymap.addLayer(layer);
+
+    var marker = L.marker([18.990072, 73.128871]).addTo(mymap);
+
+    var circle = L.circle([18.990072, 73.128871], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 100
+    }).addTo(mymap);
+
+    marker.bindPopup("<b>Pillai College Of Engineering</b><br>").openPopup();
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+      popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+    }
+
+    mymap.on('click', onMapClick);
+    var polygon = L.polygon([
+      [51.509, -0.08],
+      [51.503, -0.06],
+      [51.51, -0.047]
+    ]).addTo(mymap);
+  </script>
+  <script>
+    var x = document.getElementById("myVideo");
+
+    var vid = document.getElementById("myVideo");
+    window.onload(vid.controls = false);
+
+    function playVid() {
+      vid.play();
+    }
+
+    function pauseVid() {
+      vid.pause();
+    }
+
+
+    function openFullscreen() {
+      if (vid.requestFullscreen) {
+        vid.requestFullscreen();
+      } else if (vid.mozRequestFullScreen) {
+        /* Firefox */
+        vid.mozRequestFullScreen();
+      } else if (vid.webkitRequestFullscreen) {
+        /* Chrome, Safari & Opera */
+        vid.webkitRequestFullscreen();
+      } else if (vid.msRequestFullscreen) {
+        /* IE/Edge */
+        vid.msRequestFullscreen();
+      }
+    }
+  </script>
+</body>
+
+</html>

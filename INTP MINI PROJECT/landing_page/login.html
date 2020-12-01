@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+
+<body>
+    <!-- This is TOP LOGO -->
+    <div style="padding-left: 536px;">
+        <a id="top" href="Home.html"
+            style="border-left-width: 5px;border-left-style: solid;border-bottom-width: 5px;border-bottom-style: solid;border-right-width: 5px;border-right-style: solid;border-top-width: 5px;border-top-style: solid;">
+            Lets Cipher
+        </a>
+    </div>
+    <!-- End of TOP LOGO -->
+    <!-- Start of Nav Bar -->
+    <div>
+        <nav class="navbar">
+            <ul>
+                <li><a class="navbar" href="Home.html">Home</a></li>
+                <li><a class="navbar" href="#">Services</a></li>
+                <li><a class="navbar" href="#">Contact us</a></li>
+                <li><a class="navbar" href="#">About</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website"
+                        style="width: 23em;height: 19px;margin-left: 472px;">
+
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <!-- End of Nav bar -->
+    <!-- Form Box -->
+    <div class="form_box">
+        <div class="button_box">
+            <div id="btn"></div>
+            <button type="button" class="toogle_btn" onclick="login()">Log-In</button>
+            <button type="button" class="toogle_btn" onclick="register()">Register</button>
+        </div>
+        <form id="login" class="input_group">
+            <input type="text" class="input_field" placeholder="USER ID" required="">
+            <input type="password" class="input_field" placeholder="ENTER PASSWORD" required="">
+            <input type="checkbox" class="check_box">
+            <span>Keep me signed in</span>
+            <button id="submit" type="submit" class="submit_btn">LOGIN</button>
+        </form>
+        <form id="register" class="input_group">
+            <input type="text" class="input_field" placeholder="USER ID" required>
+            <input type="email" class="input_field" placeholder="EMAIL ID" required>
+            <input type="password" class="input_field" placeholder="PASSWORD" required>
+            <input type="password" class="input_field" placeholder="CONFIRM PASSWORD" required>
+            <input type="checkbox" class="check_box">
+            <span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit_btn">Register</button>
+        </form>
+    </div>
+    <!-- End of Form Box -->
+</body>
+
+</html>

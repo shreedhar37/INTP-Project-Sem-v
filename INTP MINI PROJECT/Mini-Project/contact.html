@@ -1,0 +1,101 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="contact.css">
+
+  <style>
+    .Navbar {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+      position: fixed;
+      overflow: hidden;
+    }
+
+
+    li.active {
+      float: left;
+    }
+
+    li.active a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: green;
+    }
+
+    li.active a:hover {
+      background-color: #111;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+
+    <!-- Creating nav bar -->
+    <ul class="Navbar">
+      <li class="active"><a class="home" href="/index.html">Home</a></li>
+      <li class="active"><a class="home" href="index.html">Log-In / Register</a></li>
+      <li class="active"><a class="contact" href="contact.html">Contact</a></li>
+      <li class="active"><a class="abputus" href="about.html">About Us</a></li>
+    </ul>
+    <div class="responsive">
+      <b>
+
+        <h1 id="heading" style="color:#039e03;margin-top:10px;">Let's C!pher</h1>
+      </b><br>
+      <div class="lock">
+        <img src="lock.jpg" alt="lock-icon">
+      </div>
+      <!--<div class="icon-lock" >
+      <div class="lock-top-1" style="background-color: #17ac2e"></div>
+      <div class="lock-top-2"></div>
+      <div class="lock-body" style="background-color: #17ac2e"></div>
+      <div class="lock-hole"></div>
+    </div> -->
+      <br>
+
+
+      <h1 style="color:#039e03">Contact Us</h1><br>
+      <form class="contactus">
+
+        <input type="text" id="fname" name="fname" placeholder="First Name"
+          style="width: 20%; height:5%; border-radius:5px;" required><br><br>
+
+        <input type="text" id="lname" name="lname" placeholder="Last Name"
+          style="width: 20%; height:5%; border-radius:5px;" required><br><br>
+
+        <input type="email" id="email" name="email" placeholder="Your Email-Id" required
+          style="width: 20%; height:5%; border-radius:5px;"><br><br><br>
+
+
+        <textarea rows="6" cols="60" class="query" style="border-radius:5px;"
+          placeholder="Your Query"></textarea><br><br><br>
+
+        <input type="submit" value="Submit" class="submit" style="font-weight:bold"><br><br><br>
+
+      </form>
+      <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+            src="https://maps.google.com/maps?q=Pillai%20college%20of%20engineering&t=&z=17&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
